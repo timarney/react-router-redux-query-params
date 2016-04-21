@@ -15,7 +15,11 @@ export class Home extends Component {
   }
 
   render () {
-    let query = this.props.query.test ? this.props.query.test : ''
+    let query = ''
+
+    if (typeof (this.props.query) !== 'undefined') {
+      query = this.props.query.somevar
+    }
 
     return (
       <div>
@@ -29,16 +33,17 @@ export class Home extends Component {
   }
 }
 
-const { object, string, func } = PropTypes
+const { object, string, func, number } = PropTypes
 
 Home.propTypes = {
   dispatch: func,
   title: string,
   query: object,
-  num: string
+  num: number
 }
 
 function mapStateToProps (state, ownProps) {
+  console.log(ownProps)
   return {
     num: state.items.num,
     query: ownProps.location.query
