@@ -17,3 +17,6 @@ export default connect(mapStateToProps, null)(YourComponent)
 
 #Why is this important?
 This type of setup would allow an app to repopulate state based on a url location.
+
+#To Run
+npm install -> npm start (runs dev server)
