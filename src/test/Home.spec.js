@@ -1,7 +1,4 @@
 /* eslint-env mocha */
-require('babel-register')
-require('babel-polyfill')
-
 import expect from 'expect'
 import React from 'react'
 import { Home } from '../components/Home'

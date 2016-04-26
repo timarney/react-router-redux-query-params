@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Link, hashHistory } from 'react-router'
+import { hashHistory, Link } from 'react-router'
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 export default class App extends Component {
   constructor (props) {
     super(props)
@@ -14,22 +15,34 @@ export default class App extends Component {
           {' '}
           <Link to={{ pathname: '/home/', query: { somevar: 'nice-this-works' } }} >Test Get Query Param</Link>
           {' | '}
-          <Link to='/foo'>Foo</Link>
+          <Link to='/numbers'>Numbers</Link>
           {' | '}
-          <Link to='/bar'>Bar</Link>
+          <Link to='/colours'>Colours</Link>
         </header>
         <div>
-          <p><button onClick={() => hashHistory.push('/foo')}>Go to /foo</button></p>
+          <p><button onClick={() => hashHistory.push('/numbers')}>Go to /Numbers</button></p>
           <hr />
         </div>
-        {this.props.children}
+        <div className='container'>
+          <ReactCSSTransitionGroup
+            component='div'
+            transitionName='panel'
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
+            {React.cloneElement(this.props.children, {
+              key: this.props.location.pathname
+            })}
+          </ReactCSSTransitionGroup>
+          </div>
       </div>
    )
   }
 }
 
-const { element } = React.PropTypes
+const { element, object } = React.PropTypes
 
 App.propTypes = {
-  children: element
+  children: element,
+  location: object
 }

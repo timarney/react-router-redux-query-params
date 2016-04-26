@@ -1,5 +1,7 @@
 var path = require('path')
 
+var webpack = require('webpack')
+
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 // multiple extract instances
@@ -11,8 +13,7 @@ var config = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'js/bundle.js',
-    publicPath: '/'
+    filename: 'js/bundle.js'
   },
   devServer: {
     inline: true,
@@ -26,16 +27,26 @@ var config = {
         exclude: /node_modules/,
         loader: 'babel'
       },
-      {
-        test: /\.scss$/i,
-        loader: extractCSS.extract(['css', 'sass'])
-      }
+       {test: /\.scss$/i, loader: extractCSS.extract(['css', 'sass'])}
     ]
   },
   sassLoader: {
     includePaths: [path.resolve(__dirname, './css')]
   },
-  plugins: [extractCSS]
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: false
+      },
+      compress: {
+        warnings: false,
+        screw_ie8: true
+      }
+    }),
+    new webpack.DefinePlugin({ 'process.env': {'NODE_ENV': '"production"'} }),
+    extractCSS]
 }
 
 module.exports = config

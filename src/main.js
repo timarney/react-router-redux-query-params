@@ -7,10 +7,17 @@ import configureStore from './store/configureStore'
 
 import App from './components/App'
 import Home from './components/Home'
-import Foo from './components/Foo'
-import Bar from './components/Bar'
+import ColourPanel from './components/ColourPanel'
+import NumberPanel from './components/NumberPanel'
+import dataColours from './data/colours'
+import dataNumbers from './data/numbers'
 
-const initialState = { items: { num: 0 } }
+require('./sass/app.scss')
+
+const initialState = { items: { num: 0 },
+                       colour: {colours: dataColours, active: 'green'},
+                       number: {numbers: dataNumbers, active: 'two'}
+                     }
 const store = configureStore(initialState)
 const history = syncHistoryWithStore(hashHistory, store)
 
@@ -20,8 +27,8 @@ render(
       <Route path='/' component={App}>
         <IndexRoute component={Home}/>
         <Route path='/home' component={Home}/>
-        <Route path='/foo' component={Foo}/>
-        <Route path='/bar' component={Bar}/>
+        <Route path='/numbers' component={NumberPanel}/>
+        <Route path='/colours' component={ColourPanel}/>
       </Route>
     </Router>
   </Provider>,
