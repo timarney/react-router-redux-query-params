@@ -26,9 +26,9 @@ render(
     <Router history={ history }>
       <Route path='/' component={App}>
         <IndexRoute component={Home}/>
-        <Route path='/home' component={Home}/>
-        <Route path='/numbers' component={NumberPanel}/>
-        <Route path='/colours' component={ColourPanel}/>
+        <Route path='home' component={Home} />
+        <Route path='numbers/:color/:number/' component={NumberPanel}/>
+        <Route path='colours/:color/:number/' component={ColourPanel}/>
       </Route>
     </Router>
   </Provider>,

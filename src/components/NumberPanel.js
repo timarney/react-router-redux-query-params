@@ -30,7 +30,7 @@ NumberPanel.propTypes = {
 function mapStateToProps (state, ownProps) {
   return {
     numbers: state.number.numbers,
-    active: state.number.active
+    active: ownProps.params.number
   }
 }
 

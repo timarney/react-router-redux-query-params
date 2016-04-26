@@ -15,12 +15,12 @@ export default class App extends Component {
           {' '}
           <Link to={{ pathname: '/home/', query: { somevar: 'nice-this-works' } }} >Test Get Query Param</Link>
           {' | '}
-          <Link to='/numbers'>Numbers</Link>
+          <Link to='/numbers/1/2/'>Numbers</Link>
           {' | '}
-          <Link to='/colours'>Colours</Link>
+          <Link to='/colours/1/2/'>Colours</Link>
         </header>
         <div>
-          <p><button onClick={() => hashHistory.push('/numbers')}>Go to /Numbers</button></p>
+          <p><button onClick={() => hashHistory.push('numbers/1/2/')}>Go to /Numbers</button></p>
           <hr />
         </div>
         <div className='container'>

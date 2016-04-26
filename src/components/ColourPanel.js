@@ -30,7 +30,7 @@ ColourPanel.propTypes = {
 function mapStateToProps (state, ownProps) {
   return {
     colours: state.colour.colours,
-    active: state.colour.active
+    active: ownProps.params.color
   }
 }
 
