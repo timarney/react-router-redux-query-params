@@ -15,7 +15,7 @@ describe('<NumberPanel /> ', () => {
                   {'image': 'image2.jpg', 'title': 'two'},
                   {'image': 'image3.jpg', 'title': 'three'}
     ]
-    const wrapper = mount(<NumberPanel numbers={data} active='two' />)
+    const wrapper = mount(<NumberPanel numbers={data} params={{ number: 'one' }} />)
     // console.log(wrapper.debug())
     expect(wrapper.find('.thumb').length).toEqual(3)
   })

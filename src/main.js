@@ -14,8 +14,7 @@ import dataNumbers from './data/numbers'
 
 require('./sass/app.scss')
 
-const initialState = { items: { num: 0 },
-                       colour: {colours: dataColours, active: 'green'},
+const initialState = { colour: {colours: dataColours, active: 'green'},
                        number: {numbers: dataNumbers, active: 'two'}
                      }
 const store = configureStore(initialState)
@@ -26,9 +25,9 @@ render(
     <Router history={ history }>
       <Route path='/' component={App}>
         <IndexRoute component={Home}/>
-        <Route path='home' component={Home} />
-        <Route path='numbers/:color/:number/' component={NumberPanel}/>
-        <Route path='colours/:color/:number/' component={ColourPanel}/>
+        <Route path='/home/:colour/:number/' component={Home}/>
+        <Route path='/colours/:colour/:number/' component={ColourPanel}/>
+        <Route path='/numbers/:colour/:number/' component={NumberPanel}/>
       </Route>
     </Router>
   </Provider>,
