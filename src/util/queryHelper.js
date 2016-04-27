@@ -1,4 +1,4 @@
-function QueryHelper (query = {}) {
+function queryHelper (query = {}) {
   let anim = true
 
   if (query.hasOwnProperty('p')) {
@@ -8,4 +8,4 @@ function QueryHelper (query = {}) {
   return { anim }
 }
 
-module.exports = QueryHelper
+export default queryHelper

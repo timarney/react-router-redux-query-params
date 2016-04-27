@@ -1,8 +1,8 @@
 /* eslint-env mocha */
 import expect from 'expect'
-import { urlHelper } from '../util/urlHelper'
+import { urlHelper } from '../util'
 
-describe('UrlHelper ', () => {
+describe('urlHelper ', () => {
   it('should render default URL', () => {
     const url = urlHelper()
     expect(url).toEqual('/home/red/two/')

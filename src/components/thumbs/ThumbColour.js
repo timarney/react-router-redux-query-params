@@ -23,5 +23,6 @@ const { string, func } = PropTypes
 ThumbColour.propTypes = {
   title: string,
   active: string,
-  select: func
+  select: func,
+  img: string
 }

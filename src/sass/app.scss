@@ -86,19 +86,20 @@ header{
         height:100%;
         background-color: #fff;
         position:absolute;
-        opacity: 0.2;
+        opacity: 0.4;
       }
     }
 
     &.active{
-
+      opacity: 0.8;
       &:before{
         content: '';
         width:100%;
         height:100%;
-        background-color: darken( #fff, 50% );
+        background-color: gold;
         position:absolute;
-        opacity: 0.4;
+        opacity: 0.8;
+
       }
     }
 

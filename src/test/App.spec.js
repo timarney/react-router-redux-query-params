@@ -8,6 +8,6 @@ describe('<App /> ', () => {
   it('should render App', () => {
     const location = { pathname: '' }
     const wrapper = shallow(<App location={location}><div>Test</div></App>)
-    expect(wrapper.contains(<p>Links:</p>)).toEqual(true)
+    expect(wrapper.find('.app').length).toEqual(1)
   })
 })

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import shallowCompare from 'react-addons-shallow-compare'
 import ThumbColour from './thumbs/ThumbColour'
-import { urlHelper } from '../util/urlHelper'
+import { urlHelper } from '../util'
 import { hashHistory } from 'react-router'
 
 export default class Panel extends Component {

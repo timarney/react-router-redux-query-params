@@ -1,14 +1,9 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react'
 
 export default class Home extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return (
-      <div>
+      <div className='home'>
         <h1>HOME</h1>
       </div>
    )

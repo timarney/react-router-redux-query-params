@@ -1,19 +1,8 @@
-import initialState from '../data'
+import defaultParams from '../util/defaultParams'
 
 function urlHelper (params = {}, type, val = '') {
-  let url = ''
-
-  let colour = initialState.colour.active
-  let number = initialState.number.active
+  let { colour, number } = defaultParams(params)
   let path = '/home'
-
-  if (params.hasOwnProperty('colour')) {
-    colour = params.colour
-  }
-
-  if (params.hasOwnProperty('number')) {
-    number = params.number
-  }
 
   switch (type) {
     case 'colour':
@@ -26,9 +15,9 @@ function urlHelper (params = {}, type, val = '') {
       break
   }
 
-  url = `${path}/${colour}/${number}/`
+  const url = `${path}/${colour}/${number}/`
 
   return url
 }
 
-exports.urlHelper = urlHelper
+export default urlHelper

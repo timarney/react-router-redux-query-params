@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import { urlHelper } from '../util/urlHelper'
-import queryHelper from '../util/queryHelper'
+import { urlHelper, queryHelper, defaultParams } from '../util'
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 export class App extends Component {
@@ -11,18 +10,20 @@ export class App extends Component {
   }
 
   render () {
-    let { params, query, colour, number } = this.props
+    let { params, query } = this.props
+
+    params = defaultParams(params)
 
     const queryVals = queryHelper(query)
 
     return (
-      <div>
+      <div className='app'>
         <header>
           <Link to={urlHelper(params)} activeClassName='active'>Home</Link>
           <Link to={urlHelper(params, 'number')} activeClassName='active'>Numbers</Link>
           <Link to={urlHelper(params, 'colour')} activeClassName='active'>Colours</Link>
           <p className='selected'>
-          Selected = <span className='colour-name'>{colour}</span> <span className='number-name'>{number}</span>
+          Selected = <span className='colour-name'>{params.colour}</span> <span className='number-name'>{params.number}</span>
           </p>
         </header>
         <div>
@@ -47,23 +48,19 @@ export class App extends Component {
   }
 }
 
-const { element, object, string } = React.PropTypes
+const { element, object } = React.PropTypes
 
 App.propTypes = {
   children: element,
   location: object,
   params: object,
-  query: object,
-  colour: string,
-  number: string
+  query: object
 }
 
 function mapStateToProps (state, ownProps) {
   return {
     params: ownProps.params,
-    query: ownProps.location.query,
-    colour: ownProps.params.colour,
-    number: ownProps.params.number
+    query: ownProps.location.query
   }
 }
 
