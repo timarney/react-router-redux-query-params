@@ -5,13 +5,11 @@ function defaultParams (params = {}) {
     params = {}
   }
 
-  if (!params.hasOwnProperty('colour')) {
-    params.colour = initialState.colour.active
-  }
-
-  if (!params.hasOwnProperty('number')) {
-    params.number = initialState.number.active
-  }
+  Object.keys(initialState).map((key, index) => {
+    if (!params.hasOwnProperty(key)) {
+      params[key] = initialState[key].active
+    }
+  })
 
   return params
 }
