@@ -1,8 +1,10 @@
+import initialState from '../data'
+
 function urlHelper (params = {}, type, val = '') {
   let url = ''
 
-  let colour = 'red'
-  let number = 'two'
+  let colour = initialState.colour.active
+  let number = initialState.number.active
   let path = '/home'
 
   if (params.hasOwnProperty('colour')) {

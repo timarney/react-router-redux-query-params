@@ -4,19 +4,11 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './store/configureStore'
-
-import App from './components/App'
-import Home from './components/Home'
-import ColourPanel from './components/ColourPanel'
-import NumberPanel from './components/NumberPanel'
-import dataColours from './data/colours'
-import dataNumbers from './data/numbers'
+import { App, Home, ColourPanel, NumberPanel } from './components'
+import initialState from './data'
 
 require('./sass/app.scss')
 
-const initialState = { colour: {colours: dataColours, active: 'green'},
-                       number: {numbers: dataNumbers, active: 'two'}
-                     }
 const store = configureStore(initialState)
 const history = syncHistoryWithStore(hashHistory, store)
 
