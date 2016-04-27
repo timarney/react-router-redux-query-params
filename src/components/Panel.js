@@ -19,7 +19,7 @@ export default class Panel extends Component {
   }
   renderThumbs (data, active) {
     return data.map((item) => {
-      return (<ThumbColour active={active} key={item.title} title={item.title} select={this.select} />)
+      return (<ThumbColour active={active} key={item.title} title={item.title} img={item.image} select={this.select} />)
     })
   }
 
@@ -30,7 +30,7 @@ export default class Panel extends Component {
           <div className='panel'>
             <div className='panel-title'>
               <span>{title}</span>
-              <span className='close'><a href='#' onClick={ () => hashHistory.push('/')} >X</a></span>
+              <span className='panel-close'><a href='#' onClick={ () => hashHistory.push('/')} >X</a></span>
               </div>
             <div className='panel-thumbs'>{thumbs}</div>
            </div>

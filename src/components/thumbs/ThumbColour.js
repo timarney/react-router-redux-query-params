@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 export default class ThumbColour extends Component {
   render () {
-    const { title, active, select } = this.props
+    const { title, active, select, img } = this.props
 
     const thumbClass = classNames({
       'active': title === active
@@ -11,7 +11,7 @@ export default class ThumbColour extends Component {
 
     return <a href='#' data-id={title} className={thumbClass} onClick={ select }>
             <div className='thumb'>
-              <img src='/img/thumb.png' />
+              <img src={`/img/${img}`} />
               <div className='title'>{title}</div>
             </div>
            </a>

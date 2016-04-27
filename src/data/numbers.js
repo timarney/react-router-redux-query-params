@@ -1,8 +1,7 @@
 const numbers = [
-	{'image': 'image1.jpg', 'title': 'one'},
-  {'image': 'image2.jpg', 'title': 'two'},
-	{'image': 'image3.jpg', 'title': 'three'},
-	{'image': 'image4.jpg', 'title': 'four'}
+	{'image': '1.jpg', 'title': 'one'},
+  {'image': '2.jpg', 'title': 'two'},
+	{'image': '3.jpg', 'title': 'three'}
 ]
 
 module.exports = numbers

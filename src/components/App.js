@@ -11,19 +11,19 @@ export class App extends Component {
   }
 
   render () {
-    let { params, query } = this.props
+    let { params, query, colour, number } = this.props
 
     const queryVals = queryHelper(query)
 
     return (
       <div>
         <header>
-          <p>Links:</p>
-          <Link to={urlHelper(params)}>Home</Link>
-          {' | '}
-          <Link to={urlHelper(params, 'number')}>Numbers</Link>
-          {' | '}
-          <Link to={urlHelper(params, 'colour')}>Colours</Link>
+          <Link to={urlHelper(params)} activeClassName='active'>Home</Link>
+          <Link to={urlHelper(params, 'number')} activeClassName='active'>Numbers</Link>
+          <Link to={urlHelper(params, 'colour')} activeClassName='active'>Colours</Link>
+          <p className='selected'>
+          Selected = <span className='colour-name'>{colour}</span> <span className='number-name'>{number}</span>
+          </p>
         </header>
         <div>
           <hr />
@@ -47,19 +47,23 @@ export class App extends Component {
   }
 }
 
-const { element, object } = React.PropTypes
+const { element, object, string } = React.PropTypes
 
 App.propTypes = {
   children: element,
   location: object,
   params: object,
-  query: object
+  query: object,
+  colour: string,
+  number: string
 }
 
 function mapStateToProps (state, ownProps) {
   return {
     params: ownProps.params,
-    query: ownProps.location.query
+    query: ownProps.location.query,
+    colour: ownProps.params.colour,
+    number: ownProps.params.number
   }
 }
 

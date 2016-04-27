@@ -1,7 +1,7 @@
 const colours = [
-	{'image': 'image1.jpg', 'title': 'red'},
-  {'image': 'image2.jpg', 'title': 'blue'},
-	{'image': 'image3.jpg', 'title': 'green'}
+	{'image': 'red.jpg', 'title': 'red'},
+  {'image': 'blue.jpg', 'title': 'blue'},
+	{'image': 'green.jpg', 'title': 'green'}
 ]
 
 module.exports = colours
