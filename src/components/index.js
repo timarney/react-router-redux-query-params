@@ -1,4 +1,4 @@
-export Hmm from './App'
-export Home from './Home'
-export Foo from './Foo'
-export Bar from './Bar'
+export { default as App } from './App.js'
+export { default as Home } from './Home.js'
+export { default as ColourPanel } from './ColourPanel.js'
+export { default as NumberPanel } from './NumberPanel.js'

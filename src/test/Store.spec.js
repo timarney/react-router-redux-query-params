@@ -4,8 +4,8 @@ import configureStore from '../store/configureStore'
 
 describe('Store ', () => {
   it('should bootstrap ', () => {
-    const initialState = { items: { num: 0 } }
+    const initialState = { colour: { } }
     const store = configureStore(initialState)
-    expect(store.getState()).toContain({ items: { num: 0 } })
+    expect(store.getState()).toContain({ colour: { } })
   })
 })

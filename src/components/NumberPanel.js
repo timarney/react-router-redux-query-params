@@ -1,36 +1,27 @@
 import React, { Component, PropTypes } from 'react'
 import Panel from './Panel'
-import ThumbColour from './thumbs/ThumbColour'
-import shallowCompare from 'react-addons-shallow-compare'
 import { connect } from 'react-redux'
 
 export class NumberPanel extends Component {
-  shouldComponentUpdate (nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState)
-  }
-  renderThumbs (numbers, active) {
-    return numbers.map((item) => {
-      return (<ThumbColour active={active} key={item.title} title= {item.title} />)
-    })
-  }
   render () {
-    const { numbers, active } = this.props
-    const thumbs = this.renderThumbs(numbers, active)
-    return <Panel title='Number Panel'>{thumbs}</Panel>
+    this.type = 'number'
+    this.title = 'My Number Panel!'
+    const { data, params } = this.props
+    return <Panel data={data} params={params} type={this.type} title={this.title} />
   }
 }
 
-const { array, string } = PropTypes
+const { array, object } = PropTypes
 
 NumberPanel.propTypes = {
-  numbers: array,
-  active: string
+  data: array,
+  params: object
 }
 
 function mapStateToProps (state, ownProps) {
   return {
-    numbers: state.number.numbers,
-    active: ownProps.params.number
+    data: state.number.numbers,
+    params: ownProps.params
   }
 }
 

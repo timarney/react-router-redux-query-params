@@ -6,7 +6,7 @@ import { shallow } from 'enzyme'
 
 describe('<Home /> ', () => {
   it('should render Home', () => {
-    const wrapper = shallow(<Home title='Hello'/>)
-    expect(wrapper.contains(<span className='count'>Hello</span>)).toEqual(true)
+    const wrapper = shallow(<Home colour='red' number=''/>)
+    expect(wrapper.contains(<span className='colour-name'>red</span>)).toEqual(true)
   })
 })
