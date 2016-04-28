@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { urlHelper, queryHelper, defaultParams } from '../util'
-
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
 export class App extends Component {
   constructor (props) {
     super(props)
@@ -11,9 +11,7 @@ export class App extends Component {
 
   render () {
     let { params, query } = this.props
-
-    params = defaultParams(params)
-
+    params = defaultParams(typeof (params) === 'object' ? params : {})
     const queryVals = queryHelper(query)
 
     return (
@@ -59,7 +57,7 @@ App.propTypes = {
 
 function mapStateToProps (state, ownProps) {
   return {
-    params: ownProps.params,
+    params: typeof (ownProps.params) === 'object' ? ownProps.params : {},
     query: ownProps.location.query
   }
 }

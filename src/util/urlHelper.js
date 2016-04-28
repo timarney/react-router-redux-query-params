@@ -1,7 +1,6 @@
-import defaultParams from '../util/defaultParams'
-
 function urlHelper (params = {}, type, val = '') {
-  let { colour, number } = defaultParams(params)
+  let { colour, number } = params
+
   let path = '/home'
 
   switch (type) {

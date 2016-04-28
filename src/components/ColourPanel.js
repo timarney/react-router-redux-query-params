@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Panel from './Panel'
 import { connect } from 'react-redux'
-import { defaultParams } from '../util'
 
 export class ColourPanel extends Component {
   render () {
@@ -20,10 +19,9 @@ ColourPanel.propTypes = {
 }
 
 function mapStateToProps (state, ownProps) {
-  const params = defaultParams(ownProps.params)
   return {
     data: state.colour.colours,
-    params: params
+    params: ownProps.params
   }
 }
 
