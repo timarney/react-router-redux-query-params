@@ -1,16 +1,20 @@
+function hasVal (val, defaultVal) {
+  return val !== '' ? val : defaultVal
+}
+
 function urlHelper (params = {}, type, val = '') {
   let { colour, number } = params
 
-  let path = '/home'
+  let path = ''
 
   switch (type) {
     case 'colour':
-      colour = val !== '' ? val : colour
-      path = '/colours'
+      colour = hasVal(val, params[type])
+      path = '/panel/colours'
       break
     case 'number':
-      number = val !== '' ? val : number
-      path = '/numbers'
+      number = hasVal(val, params[type])
+      path = '/panel/numbers'
       break
   }
 

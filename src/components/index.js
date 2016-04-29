@@ -1,4 +1,6 @@
 export { default as App } from './App.js'
+export { default as Header } from './Header.js'
 export { default as Home } from './Home.js'
+export { default as MainPanel } from './MainPanel.js'
 export { default as ColourPanel } from './ColourPanel.js'
 export { default as NumberPanel } from './NumberPanel.js'

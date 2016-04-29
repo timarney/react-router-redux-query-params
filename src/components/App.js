@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { defaultParams } from '../util'
 import { connect } from 'react-redux'
-import { urlHelper, queryHelper, defaultParams } from '../util'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import { Header } from './index'
 
 export class App extends Component {
   constructor (props) {
@@ -10,37 +9,14 @@ export class App extends Component {
   }
 
   render () {
-    let { params, query } = this.props
+    let { params } = this.props
     params = defaultParams(typeof (params) === 'object' ? params : {})
-    const queryVals = queryHelper(query)
-
     return (
       <div className='app'>
-        <header>
-          <Link to={urlHelper(params)} activeClassName='active'>Home</Link>
-          <Link to={urlHelper(params, 'number')} activeClassName='active'>Numbers</Link>
-          <Link to={urlHelper(params, 'colour')} activeClassName='active'>Colours</Link>
-          <p className='selected'>
-          Selected = <span className='colour-name'>{params.colour}</span> <span className='number-name'>{params.number}</span>
-          </p>
-        </header>
-        <div>
-          <hr />
-        </div>
+        <Header params={params} />
         <div className='container'>
-          <ReactCSSTransitionGroup
-            component='div'
-            transitionName='panel'
-            transitionEnter={queryVals.anim}
-            transitionLeave={queryVals.anim}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}
-          >
-            {React.cloneElement(this.props.children, {
-              key: this.props.location.pathname
-            })}
-          </ReactCSSTransitionGroup>
-          </div>
+        { this.props.children }
+        </div>
       </div>
    )
   }
