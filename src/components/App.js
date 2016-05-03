@@ -13,10 +13,10 @@ export class App extends Component {
     params = defaultParams(typeof (params) === 'object' ? params : {})
     return (
       <div className='app'>
-        <Header params={params} />
         <div className='container'>
         { this.props.children }
         </div>
+        <Header params={params} />
       </div>
    )
   }

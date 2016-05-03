@@ -8,14 +8,16 @@ export default class Header extends Component {
     let { params } = this.props
     return (
       <div className='header'>
-          <Link to={urlHelper(params)} activeClassName='active'>Home</Link>
-          <Link to={urlHelper(params, 'number')} activeClassName='active'>Numbers</Link>
-          <Link to={urlHelper(params, 'colour')} activeClassName='active'>Colours</Link>
-          <p className='selected'>
-          Selected = <span className='colour-name'>{params.colour}</span> <span className='number-name'>{params.number}</span>
-          </p>
+          <Link to={urlHelper(params)} activeClassName='active'>
+            <img src='img/icons/ico-menu-profile.svgz' />
+          </Link>
+          <Link to={urlHelper(params, 'number')} activeClassName='active'>
+            <img src='img/icons/ico-menu-color.svgz' />
+          </Link>
+          <Link to={urlHelper(params, 'colour')} activeClassName='active'>
+            <img src='img/icons/ico-menu-home-style.svgz' />
+          </Link>
         <div>
-          <hr />
         </div>
       </div>
    )

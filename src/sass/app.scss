@@ -1,4 +1,8 @@
 $base-color: #2a282b;
+$nav-arrow-width: 10px;
+$nav-minus-arrow-width: 1px - $nav-arrow-width;
+$yellow: #b5be34;
+$yellow-hover: #848828;
 
 body{
   color:#000;
@@ -8,23 +12,68 @@ body{
 #app{
   background-color: #efefef;
   margin:20px;
+  width:700px;
+  height:607px;
 
   .header{
-    padding:10px;
-    margin-top:20px;
-    margin-bottom:20px;
+    border:1px solid #000;
+    background-color: #6d6e70;
+    border-top:none;
+    height:72px;
+    display: flex;
+    justify-content: flex-end;
+
     a{
-      display:inline-block;
+      display:flex;
       text-decoration: none;
-      color:#666666;
+      position: relative;
+      color:#fff;
+      background-color: $yellow;
       padding:10px;
       &.active{
-        border: 1px solid #ccc;
+        background-color: $yellow-hover;
       }
-      &:after:not(:last-child){
-        content:' | '
+      &:hover{
+        background-color: $yellow-hover;
+      }
+      &:first-child{
+        border-left: 1px solid #000;
+        &:before{
+          content: "";
+          width: 0;
+	        height: 0;
+	        border-top: $nav-arrow-width solid transparent;
+	        border-bottom: $nav-arrow-width solid transparent;
+          border-right: $nav-arrow-width solid #000;
+          position: absolute;
+          top: calc(50% - #{$nav-arrow-width});
+          left:-$nav-arrow-width;
+        }
+        &:after{
+          content: "";
+          width: 0;
+	        height: 0;
+	        border-top: $nav-arrow-width solid transparent;
+	        border-bottom: $nav-arrow-width solid transparent;
+          border-right: $nav-arrow-width solid $yellow;
+          position: absolute;
+          top: calc(50% - #{$nav-arrow-width});
+          left:$nav-minus-arrow-width;
+        }
+        &:hover{
+          &:after{
+            border-right: $nav-arrow-width solid $yellow-hover;
+          }
+        }
+        &.active{
+          &:after{
+            border-right: $nav-arrow-width solid $yellow-hover;
+          }
+        }
       }
     }
+
+
 
     .selected{
       margin-top:30px;
@@ -141,9 +190,10 @@ body{
   justify-content: flex-end;
 
 
-  height:500px;
-  width:100%;
+  height:532px;
+  width:698px;
   overflow: hidden;
+  border:1px solid #000;
 
   .panel{
     margin-right: 5px;
