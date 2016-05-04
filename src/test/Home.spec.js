@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+
 import expect from 'expect'
 import React from 'react'
 import Home from '../components/Home'

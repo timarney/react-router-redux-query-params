@@ -3,22 +3,26 @@ function hasVal (val, defaultVal) {
 }
 
 function urlHelper (params = {}, type, val = '') {
-  let { colour, number } = params
+  let { profile, colour, building } = params
 
   let path = ''
 
   switch (type) {
+    case 'profile':
+      profile = hasVal(val, params[type])
+      path = '/panel/profile'
+      break
     case 'colour':
       colour = hasVal(val, params[type])
       path = '/panel/colours'
       break
-    case 'number':
-      number = hasVal(val, params[type])
-      path = '/panel/numbers'
+    case 'building':
+      building = hasVal(val, params[type])
+      path = '/panel/building'
       break
   }
 
-  const url = `${path}/${colour}/${number}/`
+  const url = `${path}/${profile}/${colour}/${building}/`
 
   return url
 }

@@ -1,7 +1,9 @@
+import dataProfiles from './profiles'
 import dataColours from './colours'
-import dataNumbers from './numbers'
+import dataBuildings from './buildings'
 
-const initialState = { colour: {colours: dataColours, default: 'red'},
-                       number: {numbers: dataNumbers, default: 'one'}
+const initialState = { profile: {profiles: dataProfiles, default: 'pone'},
+                       colour: {colours: dataColours, default: 'red'},
+                       building: {buildings: dataBuildings, default: 'bred'}
                      }
 export default initialState

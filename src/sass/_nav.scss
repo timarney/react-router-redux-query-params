@@ -1,0 +1,79 @@
+/*--------------------------------------------*
+	 * NAV
+	 *--------------------------------------------*/
+
+.header{
+  border:1px solid #000;
+  background-color: #6d6e70;
+  border-top:none;
+  height:72px;
+  display: flex;
+  justify-content: flex-end;
+
+  .label{
+    display: flex;
+    color:#fff;
+	  flex-direction: column;
+	  justify-content: center;
+	  height: 100%;
+	  margin: 0 1em;
+	  overflow: hidden;
+	  font: bold 0.875em/1.286 Arial, Helvetica, sans-serif;
+	  text-shadow: 0.071em 0.143em 0.071em rgba(35, 31, 32, 0.8);
+	  text-transform: uppercase;
+  }
+
+  a{
+    display:flex;
+    text-decoration: none;
+    position: relative;
+    color:#fff;
+    background-color: $yellow;
+    padding:10px;
+    border-right:1px solid #fff;
+    &.active{
+      background-color: $yellow-hover;
+    }
+    &:hover{
+      background-color: $yellow-hover;
+    }
+    &:last-child{
+      border-right:none;
+    }
+    &:first-of-type{
+      border-left: 1px solid #000;
+      &:before{
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: $nav-arrow-width solid transparent;
+        border-bottom: $nav-arrow-width solid transparent;
+        border-right: $nav-arrow-width solid #000;
+        position: absolute;
+        top: calc(50% - #{$nav-arrow-width});
+        left:-$nav-arrow-width;
+      }
+      &:after{
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: $nav-arrow-width solid transparent;
+        border-bottom: $nav-arrow-width solid transparent;
+        border-right: $nav-arrow-width solid $yellow;
+        position: absolute;
+        top: calc(50% - #{$nav-arrow-width});
+        left:$nav-minus-arrow-width;
+      }
+      &:hover{
+        &:after{
+          border-right: $nav-arrow-width solid $yellow-hover;
+        }
+      }
+      &.active{
+        &:after{
+          border-right: $nav-arrow-width solid $yellow-hover;
+        }
+      }
+    }
+  }
+}

@@ -4,17 +4,22 @@ import { urlHelper } from '../util'
 
 describe('urlHelper ', () => {
   it('should use params ', () => {
-    const url = urlHelper({ colour: 'blue', number: 'three' })
-    expect(url).toEqual('/home/blue/three/')
+    const url = urlHelper({ profile: 'pone', colour: 'blue', building: 'three' })
+    expect(url).toEqual('/pone/blue/three/')
+  })
+
+  it('should use params for profile', () => {
+    const url = urlHelper({ profile: 'pone', colour: 'blue', building: 'three' }, 'profile', 'one')
+    expect(url).toEqual('/panel/profile/one/blue/three/')
   })
 
   it('should use params for colour', () => {
-    const url = urlHelper({ colour: 'blue', number: 'three' }, 'number', 'one')
-    expect(url).toEqual('/numbers/blue/one/')
+    const url = urlHelper({ profile: 'pone', colour: 'blue', building: 'three' }, 'colour', 'red')
+    expect(url).toEqual('/panel/colours/pone/red/three/')
   })
 
-  it('should use params for number', () => {
-    const url = urlHelper({ colour: 'blue', number: 'three' }, 'colour', 'red')
-    expect(url).toEqual('/colours/red/three/')
+  it('should use params for building', () => {
+    const url = urlHelper({ profile: 'pone', colour: 'blue', building: 'three' }, 'building', 'a')
+    expect(url).toEqual('/panel/building/pone/blue/a/')
   })
 })

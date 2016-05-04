@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+
 import expect from 'expect'
 import configureStore from '../store/configureStore'
 

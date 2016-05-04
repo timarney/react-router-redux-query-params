@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react'
 import Panel from './Panel'
 import { connect } from 'react-redux'
 
-export class NumberPanel extends Component {
+export class BuildingPanel extends Component {
   render () {
-    this.type = 'number'
-    this.title = 'My Number Panel!'
+    this.type = 'building'
+    this.title = 'My Building Panel!'
     const { data, params } = this.props
     return <Panel data={data} params={params} type={this.type} title={this.title} />
   }
@@ -13,16 +13,16 @@ export class NumberPanel extends Component {
 
 const { array, object } = PropTypes
 
-NumberPanel.propTypes = {
+BuildingPanel.propTypes = {
   data: array,
   params: object
 }
 
 function mapStateToProps (state, ownProps) {
   return {
-    data: state.number.numbers,
+    data: state.building.buildings,
     params: ownProps.params
   }
 }
 
-export default connect(mapStateToProps, null)(NumberPanel)
+export default connect(mapStateToProps, null)(BuildingPanel)
