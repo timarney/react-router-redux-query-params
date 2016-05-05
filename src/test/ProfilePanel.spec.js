@@ -18,6 +18,6 @@ describe('<ProfilePanel /> ', () => {
     ]
     const wrapper = mount(<ProfilePanel data={data} params={{ number: 'one' }} />)
     // console.log(wrapper.debug())
-    expect(wrapper.find('.thumb').length).toEqual(3)
+    expect(wrapper.find('img.thumb').length).toEqual(3)
   })
 })

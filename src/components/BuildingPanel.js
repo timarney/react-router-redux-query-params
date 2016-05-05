@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 export class BuildingPanel extends Component {
   render () {
     this.type = 'building'
-    this.title = 'My Building Panel!'
+    this.title = 'Home Style'
     const { data, params } = this.props
-    return <Panel data={data} params={params} type={this.type} title={this.title} />
+    return <Panel width={180} data={data} params={params} type={this.type} title={this.title} />
   }
 }
 

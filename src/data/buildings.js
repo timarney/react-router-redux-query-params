@@ -1,7 +1,7 @@
 const buildings = [
-	{'image': 'red.jpg', 'title': 'bred'},
-  {'image': 'blue.jpg', 'title': 'bblue'},
-	{'image': 'green.jpg', 'title': 'bgreen'}
+	{'image': 'thb-bungalow.jpg', 'title': 'bungalow'},
+  {'image': 'thb-cottage.jpg', 'title': 'two-storey'},
+	{'image': 'thb-two-storey.jpg', 'title': 'cottage'}
 ]
 
 module.exports = buildings

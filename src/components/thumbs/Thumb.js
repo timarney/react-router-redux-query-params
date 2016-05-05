@@ -1,28 +1,29 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 
-export default class ThumbColour extends Component {
+export default class Thumb extends Component {
   render () {
-    const { title, active, select, img } = this.props
+    const { title, active, select, img, type } = this.props
 
     const thumbClass = classNames({
+      'thumb': true,
+      [type]: true,
       'active': title === active
     })
 
     return <a href='#' data-id={title} className={thumbClass} onClick={ select }>
-            <div className='thumb'>
-              <img src={`/img/${img}`} />
-              <div className='title'>{title}</div>
-            </div>
+              <img className={thumbClass} src={`${img}`} />
+              {title}
            </a>
   }
 }
 
 const { string, func } = PropTypes
 
-ThumbColour.propTypes = {
+Thumb.propTypes = {
   title: string,
   active: string,
   select: func,
-  img: string
+  img: string,
+  type: string
 }

@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 export class ColourPanel extends Component {
   render () {
     this.type = 'colour'
-    this.title = 'My Colour Panel'
+    this.title = 'Colour'
     const { data, params } = this.props
     return <Panel data={data} params={params} type={this.type} title={this.title} />
   }

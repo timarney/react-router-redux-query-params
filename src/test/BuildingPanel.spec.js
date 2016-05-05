@@ -17,6 +17,6 @@ describe('<BuildingPanel /> ', () => {
     ]
     const wrapper = mount(<BuildingPanel data={data} params={{ colour: 'blue' }} />)
     // console.log(wrapper.debug())
-    expect(wrapper.find('.thumb').length).toEqual(2)
+    expect(wrapper.find('img.thumb').length).toEqual(2)
   })
 })

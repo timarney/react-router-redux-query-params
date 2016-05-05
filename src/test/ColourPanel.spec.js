@@ -16,7 +16,6 @@ describe('<ColourPanel /> ', () => {
                   {'image': 'image2.jpg', 'title': 'blue'}
     ]
     const wrapper = mount(<ColourPanel data={data} params={{ colour: 'blue' }} />)
-    // console.log(wrapper.debug())
-    expect(wrapper.find('.thumb').length).toEqual(2)
+    expect(wrapper.find('img.thumb').length).toEqual(2)
   })
 })

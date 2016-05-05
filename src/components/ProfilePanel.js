@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 export class ProfilePanel extends Component {
   render () {
     this.type = 'profile'
-    this.title = 'My Profile Panel!'
+    this.title = 'Profile'
     const { data, params } = this.props
     return <Panel data={data} params={params} type={this.type} title={this.title} />
   }

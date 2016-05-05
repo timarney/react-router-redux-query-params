@@ -2,7 +2,7 @@
 	 * NAV
 	 *--------------------------------------------*/
 
-.header{
+.nav{
   border:1px solid #000;
   background-color: #6d6e70;
   border-top:none;
@@ -21,6 +21,11 @@
 	  font: bold 0.875em/1.286 Arial, Helvetica, sans-serif;
 	  text-shadow: 0.071em 0.143em 0.071em rgba(35, 31, 32, 0.8);
 	  text-transform: uppercase;
+  }
+
+  .selected-label{
+    align-self: flex-start;
+    flex:1;
   }
 
   a{

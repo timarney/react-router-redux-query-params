@@ -1,0 +1,49 @@
+/*--------------------------------------------*
+	 * Thumbs
+	 *--------------------------------------------*/
+
+.panel-thumbs{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  background-color: rgba(17, 13, 17, 0.8);
+  border: 0.0625em solid #fff;
+  border-radius: 0.25em;
+  padding:10px;
+
+  a{
+    text-decoration: none;
+    margin-bottom:5px;
+    display: inline-block;
+    color:$yellow;
+    text-align: center;
+    font-size: 0.5em;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    &:hover{
+      color: #fff;
+    }
+    &.active{
+      color: #fff;
+    }
+
+    img{
+      display:block;
+      border: 0.0625em solid currentColor;
+      box-shadow: 0 0 0 0.0625em transparent;
+      transition: box-shadow 0.2s;
+
+      margin-bottom:5px;
+      transition: border 0.5s ease-out;
+
+      &:hover{
+        box-shadow: 0 0 0 0.0625em #fff;
+      }
+      &.active{
+        box-shadow: 0 0 0 0.0625em #fff;
+      }
+    }
+  }
+}

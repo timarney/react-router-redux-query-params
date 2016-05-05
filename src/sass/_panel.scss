@@ -1,0 +1,46 @@
+/*--------------------------------------------*
+	 * Panel
+	 *--------------------------------------------*/
+
+.panel{
+  width:288px;
+  font: bold 0.625em/1.4 Arial, Helvetica, sans-serif;
+  text-shadow: 0.071em 0.143em 0.071em rgba(35, 31, 32, 0.8);
+  text-transform: uppercase;
+  margin-top:10px;
+  margin-right:5px;
+
+  .panel-title{
+    display: flex;
+    height: 1.6em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $yellow;
+    padding-left: 5px;
+    margin-bottom:2px;
+    color:#fff;
+    border-radius: 0.4em 0.25em 0 0;
+  }
+
+  .panel-close{
+
+
+  }
+
+  .panel-close a{
+    display:inline-flex;
+    width:20px;
+    height:20px;
+    justify-content:center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+
+    color:#fff;
+    text-decoration: none;
+
+    &:hover{
+      background-color: #d94f5c;
+    }
+  }
+}
